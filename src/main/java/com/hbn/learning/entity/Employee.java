@@ -1,8 +1,18 @@
 package com.hbn.learning.entity;
 
+import javax.annotation.processing.Generated;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+
+@Entity(name = "emppp")
 public class Employee {
 	
-	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id ;
 	private String name ;
 	private String gender;
@@ -16,14 +26,21 @@ public class Employee {
 
 
 
-	public Employee(int id, String name, String gender, int salary) {
+//	public Employee(int id, String name, String gender, int salary) {
+//		super();
+//		this.id = id;
+//		this.name = name;
+//		this.gender = gender;
+//		this.salary = salary;
+//	}
+
+	public Employee( String name, String gender, int salary) {
 		super();
-		this.id = id;
+		
 		this.name = name;
 		this.gender = gender;
 		this.salary = salary;
 	}
-
 
 
 	public int getId() {
