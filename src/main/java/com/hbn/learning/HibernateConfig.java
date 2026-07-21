@@ -1,7 +1,6 @@
 package com.hbn.learning;
 
 import java.util.Properties;
-import java.util.PropertyPermission;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
@@ -25,8 +24,9 @@ public class HibernateConfig {
 		
 		
 		
-		properties.put(Environment.DIALECT, "org.hibernate.dialect.MySQLDialect");
-		properties.put(Environment.JAKARTA_JDBC_DRIVER, "jdbc:mysql://localhost:3306/java11");
+		properties.put(Environment.DIALECT,"org.hibernate.dialect.MySQLDialect");
+		properties.put(Environment.JAKARTA_JDBC_DRIVER, "com.mysql.cj.jdbc.Driver");
+		properties.put(Environment.JAKARTA_JDBC_URL, "jdbc:mysql://localhost:3306/java11");
 		properties.put(Environment.JAKARTA_JDBC_USER,"root");
 		properties.put(Environment.JAKARTA_JDBC_PASSWORD, "Ashish@123");
 		properties.put(Environment.HBM2DDL_AUTO,"create");
