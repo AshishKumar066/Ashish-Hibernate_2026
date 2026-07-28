@@ -13,7 +13,7 @@ public class Main {
 		
 //		Employee emp = new Employee(2,"Anuragh Kumar", "Male", 890000);
 		
-		Employee emp = new Employee("Anuragh Kumar", "Male", 890000);
+		Employee emp = new Employee(1,"Anuragh Kumar", "Male", 890000);
 
 		
 //		Configuration cfg = new Configuration().configure("hibernate.cfg.xml");
