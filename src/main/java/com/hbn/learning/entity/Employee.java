@@ -1,108 +1,102 @@
 package com.hbn.learning.entity;
 
-import javax.annotation.processing.Generated;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
-import lombok.Data;
+import jakarta.persistence.Transient;
 
 
 
 
 
-@Data
-@AllArgsConstructor
-//@Entity(name = "emppp")
+
+@Entity
 public class Employee {
 	
-//	@Id
-//	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id ;
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private int id;
+	
 	private String name ;
 	private String gender;
 	private int salary;
 	
 	
+//	if we want that , don't add variable into the database then use it
+	@Transient
+	private String compName;
 	
-//	public Employee() {
-//		super();
-//	}
+	
+	
+	
+	public Employee() {
+	}
 
 
 
-//	public Employee(int id, String name, String gender, int salary) {
-//		super();
-//		this.id = id;
-//		this.name = name;
-//		this.gender = gender;
-//		this.salary = salary;
-//	}
+	public Employee( String name, String gender, int salary,String compName)
+	{
+		this.setCompName(compName);
+		this.name = name;
+		this.gender = gender;
+		this.salary = salary;
+	}
 
-//	public Employee( String name, String gender, int salary) {
-//		super();
-//		
-//		this.name = name;
-//		this.gender = gender;
-//		this.salary = salary;
-//	}
-//
-//
-//	public int getId() {
-//		return id;
-//	}
-//
-//
-//
-//	public void setId(int id) {
-//		this.id = id;
-//	}
-//
-//
-//
-//	public String getName() {
-//		return name;
-//	}
-//
-//
-//
-//	public void setName(String name) {
-//		this.name = name;
-//	}
-//
-//
-//
-//	public String getGender() {
-//		return gender;
-//	}
-//
-//
-//
-//	public void setGender(String gender) {
-//		this.gender = gender;
-//	}
-//
-//
-//
-//	public int getSalary() {
-//		return salary;
-//	}
-//
-//
-//
-//	public void setSalary(int salary) {
-//		this.salary = salary;
-//	}
-//
-//
-//
-//	@Override
-//	public String toString() {
-//		return "Employee [id=" + id + ", name=" + name + ", gender=" + gender + ", salary=" + salary + "]";
-//	}
-//	
+
+	public String getName() {
+		return name;
+	}
+
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+
+	public String getGender() {
+		return gender;
+	}
+
+
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
+
+
+	public int getSalary() {
+		return salary;
+	}
+
+
+
+	public void setSalary(int salary) {
+		this.salary = salary;
+	}
+
+
+
+	public String getCompName() {
+		return compName;
+	}
+
+
+
+	public void setCompName(String compName) {
+		this.compName = compName;
+	}
+
+
+
+	@Override
+	public String toString() {
+		return "Employee [name=" + name + ", gender=" + gender + ", salary=" + salary + "]";
+	}
+	
 	
 	
 	
