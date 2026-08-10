@@ -24,7 +24,7 @@ public class HibernateConfig {
 		
 		
 		
-		properties.put(Environment.DIALECT,"org.hibernate.dialect.MySQLDialect");
+		properties.put(Environment.DIALECT,"org.hibernate.dialect.MySQLDialect");  // It's not mandatory for use priority based 
 		properties.put(Environment.JAKARTA_JDBC_DRIVER, "com.mysql.cj.jdbc.Driver");
 		properties.put(Environment.JAKARTA_JDBC_URL, "jdbc:mysql://localhost:3306/java11");
 		properties.put(Environment.JAKARTA_JDBC_USER,"root");
@@ -36,7 +36,7 @@ public class HibernateConfig {
 		
 		StandardServiceRegistry ssr = new StandardServiceRegistryBuilder().applySettings(properties).build();
 		
-		Metadata meta = new MetadataSources(ssr).addAnnotatedClass(Employee.class).getMetadataBuilder().build();
+		Metadata meta = new MetadataSources(ssr).addAnnotatedClass(com.hbn.learning.entity.Employee.class).getMetadataBuilder().build();
 		
 		
 		return meta.buildSessionFactory();
