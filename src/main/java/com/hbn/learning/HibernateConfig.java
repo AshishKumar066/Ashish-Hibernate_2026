@@ -29,14 +29,14 @@ public class HibernateConfig {
 		properties.put(Environment.JAKARTA_JDBC_URL, "jdbc:mysql://localhost:3306/java11");
 		properties.put(Environment.JAKARTA_JDBC_USER,"root");
 		properties.put(Environment.JAKARTA_JDBC_PASSWORD, "Ashish@123");
-		properties.put(Environment.HBM2DDL_AUTO,"update");
+		properties.put(Environment.HBM2DDL_AUTO,"create");
 		properties.put(Environment.SHOW_SQL,"true");
 		properties.put(Environment.FORMAT_SQL,"true");
 		
 		
 		StandardServiceRegistry ssr = new StandardServiceRegistryBuilder().applySettings(properties).build();
 		
-		Metadata meta = new MetadataSources(ssr).addAnnotatedClass(Employee.class).getMetadataBuilder().build();
+		Metadata meta = new MetadataSources(ssr).addAnnotatedClasses(com.hbn.learning.entity.Employee.class,com.hbn.learning.entity.Address.class).getMetadataBuilder().build();
 		
 		
 		return meta.buildSessionFactory();
